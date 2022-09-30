@@ -1,7 +1,9 @@
+from django.contrib import admin
 from django.urls import path
-from .views import *
+from shop import views
 urlpatterns = [
-    path('',index,name='index'),
-    path('<int:id>/',detail,name='detail'),
-    path('checkout/',checkout,name='checkout'),
+    path('',views.index,name='index'),
+    path('<int:id>/',views.detail,name='detail'),
+    path('checkout/',views.checkout,name='checkout'),
+   
 ]

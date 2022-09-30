@@ -1,4 +1,4 @@
-{% load static %}
+{% load static%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,7 +68,7 @@
 
 
         <div class="row m-5">
-            {% for product in product_obj %}
+            {% for product in product_objects %}
             <div class="col-md-3">
                 <div class="card">
                     <img src="{{product.image}}" class="card-img-top">
@@ -88,20 +88,20 @@
         <div class="row">
             <div class="col-md-3 offset-md-4">
                 <ul class="pagination">
-                    {% if product_obj.has_previous %}
+                    {% if product_objects.has_previous %}
                     <li class="page-item">
-                        <a class="page-link" href="?page={{product_obj.previous_page_number}}  ">Previous</a>
+                        <a class="page-link" href="?page= {{product_objects.previous_page_number}}">Previous</a>
                     </li>
                     {% endif %}
 
 
                     <li class="page-item active">
-                        <a class="page-link" href="?page={{product_obj.number}}">Current</a>
+                        <a class="page-link" href="?page={{product_objects.number}}">Current</a>
                     </li>
 
-                    {% if product_obj.has_next %}
+                    {% if product_objects.has_next %}
                     <li class="page-item">
-                        <a class="page-link" href="?page={{product_obj.next_page_number}}">Next</a>
+                        <a class="page-link" href="?page= {{product_objects.next_page_number}}">Next</a>
                     </li>
                     {% endif %}
                 </ul>
