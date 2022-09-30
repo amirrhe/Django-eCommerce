@@ -13,24 +13,39 @@
 <link rel="stylesheet" href="{% static 'shop/style.css' %}">
 
 <body>
-    <div class="container">
-        <div class="row">
-            {% for product in product_obj %}
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="{{product.image}}" class="card-img-top">
-                    <div class="card-body">
-                        <div class="card-title">
-                            {{product.title}}
-                        </div>
-                        <div class="card-text">
-                            {{product.price}}$
-                        </div>
+
+    <div class="row m-5">
+        <div class="col-md-12">
+            <form class="card card-sm">
+                <div class="card-body row no-gutters align-items-center">
+                    <div class="col">
+                        <input type="search" name='item_name' placeholder="Search for products" class="form-control form-control-borderless">
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for product in product_obj %}
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{{product.image}}" class="card-img-top">
+                <div class="card-body">
+                    <div class="card-title">
+                        {{product.title}}
+                    </div>
+                    <div class="card-text">
+                        {{product.price}}$
                     </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
+    </div>
 
     </div>
 </body>
