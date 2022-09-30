@@ -46,8 +46,26 @@
         </div>
         {% endfor %}
     </div>
+    <div class="row">
+        <div class="col-md-3 offset-md-4">
+            <ul class="pagination">
+                {% if product_obj.has_previous %}
+                <li class="page-items">
+                    <a class="page-link" href="?page={{product_obj.previous_page_number}}">pervious</a>
+                </li>
+                {% endif %}
 
+                <li class="page-active">
+                    <a class="page-link" href="?page={{product_obj.number}}">current</a>
+                </li>
+                {% if product_obj.has_next %}
+                <li class="page-items">
+                    <a class="page-link" href="?page={{product_obj.next_page_number}}">next</a>
+                </li>
+                {% endif %}
+        </div>
     </div>
+
 </body>
 
 </html>
